@@ -1,14 +1,22 @@
-# Snippet Sample
+## introduce
 
-This is the source code for [Snippet Guide](https://code.visualstudio.com/api/language-extensions/snippet-guide).
+if you have snippet idea, pr welcome.
 
-## VS Code API
+## support snippet
 
-### Contribution Points
+- cmf
+  create Markup formily snippet(快速创建 Markup)
+- ccf
+  create custom component(创建自定义组件)
+- cmff
+  create Markup field(Markup 场景下快读创建字段)
+- cffv
+  create field function validator(创建字段的函数类型校验器)
+- cor
+  create object reaction(创建对象类型的 x-reactions)
+- cfr
+  create function reaction(创建函数类型的 x-reactions)
 
-- [`contributes.snippets`](https://code.visualstudio.com/api/references/contribution-points#contributes.snippets)
+## github
 
-## Running the Sample
-
-- Run the `Run Extension` target in the Debug View
-- When you type `log` in a JavaScript file, you would see the snippet `Print to console`.
+https://github.com/moushicheng/formily-snippets
