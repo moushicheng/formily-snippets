@@ -1,0 +1,109 @@
+{
+  "/create": {
+    "description": "create Markup  formily snippet(快速创建Markup)",
+    "prefix": "cmf",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "body": [
+      "import\t* as React from 'react'",
+      "import\t{ createForm } from '@formily/core'",
+      "import\t{ createSchemaField, FormProvider } from '@formily/react'",
+      "import\t{ FormItem, Input } from '@byted-k12/formily-arco'",
+      "",
+      "const\tSchemaField = createSchemaField({",
+      "\t components: {",
+      "\t   FormItem,",
+      "\t   Input,",
+      "\t },",
+      "})",
+      "",
+      "const\t${1:${TM_FILENAME_BASE}} = () => {",
+      "\t const form = React.useMemo(createForm, [])",
+      "",
+      "\t return (",
+      "\t   <FormProvider form={form}>",
+      "\t     <SchemaField>",
+      "\t       <SchemaField.Number title='title' name='field_1'  x-decorator='FormItem'  x-component='Input' />",
+      "\t     </SchemaField>",
+      "\t   </FormProvider>",
+      "\t )",
+      "}",
+      "",
+      "export\tdefault ${1:${TM_FILENAME_BASE}}"
+    ]
+  },
+  "/custom": {
+    "description": "create custom component(创建自定义组件)",
+    "prefix": "ccf",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "body": [
+      "import\t* as React from 'react'",
+      "",
+      "import\t{ observer, useField, useFieldSchema, RecursionField } from '@formily/react'",
+      "import\t{ ArrayField , Field } from '@formily/core'",
+      "",
+      "const\t${1:${TM_FILENAME_BASE}} = observer(() => {",
+      "\t   const field = useField() as Field",
+      "\t   const schema = useFieldSchema()",
+      "",
+      "\t     return (",
+      "\t       <div>",
+      "\t   </div>",
+      "\t )",
+      "})",
+      "",
+      "export\tdefault ${1:${TM_FILENAME_BASE}}"
+    ]
+  },
+  "/filed": {
+    "description": "create Markup field(Markup 场景下快读创建字段)",
+    "prefix": "cmff",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "body": [
+      "<SchemaField.String name='name' title='title' x-decorator='FormItem' x-component='${1:Input}' />"
+    ]
+  },
+  "/validator": {
+    "description": "create field function validator(创建字段的函数类型校验器)",
+    "prefix": "cffv",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "body": [
+      "export const ${1:validator} = (value:number,_rules:any,ctx:{form:Form,field:Field}) => {",
+      "\tconsole.log('validator',{value,ctx})",
+      "",
+      "\tif (!value) return null",
+      "",
+      "\tif (value < 100) return '不能小于100'",
+      "",
+      "\treturn null",
+      "}"
+    ]
+  },
+  "/object-reaction": {
+    "description": "create object reaction(创建对象类型的 x-reactions)",
+    "prefix": "cor",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "body": [
+      "x-reactions={{",
+      "dependencies: ['.${1:dep_field}'],",
+      "fulfill: {",
+      "\trun:\"{{console.log($deps)}}\",",
+      "\tstate:{",
+      "\t\tvisible: '{{$deps[0]!==1}}',",
+      "\t}",
+      "}",
+      "}}"
+    ]
+  },
+  "/function-reaction": {
+    "description": "create function reaction(创建函数类型的 x-reactions)",
+    "prefix": "cfr",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact",
+    "body": [
+      "x-reactions={(field: Field) => {",
+      "const ${1:dep_field}:number|undefined = field.query('.dep_field').value()",
+      "// eslint-disable-next-line no-param-reassign",
+      "field.visible = ${1:dep_field} !== 1",
+      "}}"
+    ]
+  }
+}
