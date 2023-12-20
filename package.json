@@ -1,12 +1,13 @@
 {
-  "name": "snippet-sample",
-  "displayName": "Snippet Sample",
-  "description": "Snippet Sample",
+  "name": "formily-snippet",
+  "displayName": "formily-snippet",
+  "description": "support some useful formily snippet",
   "version": "0.0.1",
-  "publisher": "vscode-samples",
+  "publisher": "moushicheng",
   "engines": {
     "vscode": "^1.28.0"
   },
+  "icon": "logo/logo.png",
   "categories": [
     "Snippets"
   ],
@@ -29,5 +30,9 @@
         "path": "./snippets.json"
       }
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moushicheng/formily-snippets"
   }
 }
