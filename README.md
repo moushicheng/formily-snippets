@@ -4,6 +4,8 @@ if you have snippet idea, pr welcome.
 
 ## support snippet
 
+The following snippet are provided by [Galileo01](https://github.com/Galileo01)
+
 - cmf
 
   create Markup formily snippet(快速创建 Markup)
@@ -27,6 +29,10 @@ if you have snippet idea, pr welcome.
 - cfr
 
   create function reaction(创建函数类型的 x-reactions)
+
+## Contributor
+
+<a href="https://github.com/Galileo01"><img src="https://avatars.githubusercontent.com/u/47887657?v=4" alt="MarineGEO circle logo" style="height: 50px; width:50px; border-radius:25px "/></a>
 
 ## github
 
